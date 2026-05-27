@@ -1,0 +1,93 @@
+### Variables for testing
+@baseUrl = http://localhost:3000
+@planetId = 6a152cc410691af949485afa
+@secondPlanetId = 6a152cc410691af949485af9
+
+
+
+### [/] - greeting
+GET {{baseUrl}}/
+
+
+
+### [/planets] - Get all planets
+GET {{baseUrl}}/planets
+
+
+
+### [/planets/{{planetId}}] - Get one planet by ID
+GET {{baseUrl}}/planets/{{planetId}}
+
+
+
+### [/planets] - Create one planet
+POST {{baseUrl}}/planets
+Content-Type: application/json
+
+{
+	"name": "Earth",
+	"planetType": "Terrestrial",
+	"diameterMiles": 7917,
+	"radiusMiles": 3959,
+	"yearInEarthDays": 365.25,
+	"dayInEarthHours": 24,
+	"closestDistanceFromEarthMiles": 0,
+	"furthestDistanceFromEarthMiles": 0,
+	"distanceFromSunMiles": 92960000,
+	"numberOfMoons": 1,
+	"gravityComparedToEarth": 1,
+	"averageTemperatureF": 59,
+	"atmosphere": [
+		"Nitrogen",
+		"Oxygen"
+	],
+	"hasRings": false,
+	"orbitalSpeedMph": 67000,
+	"axialTiltDegrees": 23.5,
+	"interestingFact": "Only planet known to support life"
+}
+
+
+
+### [/planets/{{planetId}}] - Replace one planet
+PUT {{baseUrl}}/planets/{{planetId}}
+Content-Type: application/json
+
+{
+	"name": "Earth",
+	"planetType": "Terrestrial",
+	"diameterMiles": 7917,
+	"radiusMiles": 3959,
+	"yearInEarthDays": 365.25,
+	"dayInEarthHours": 24,
+	"closestDistanceFromEarthMiles": 0,
+	"furthestDistanceFromEarthMiles": 0,
+	"distanceFromSunMiles": 92960000,
+	"numberOfMoons": 1,
+	"gravityComparedToEarth": 1,
+	"averageTemperatureF": 59,
+	"atmosphere": [
+		"Nitrogen",
+		"Oxygen"
+	],
+	"hasRings": false,
+	"orbitalSpeedMph": 67000,
+	"axialTiltDegrees": 23.5,
+	"interestingFact": "Only planet known to support life"
+}
+
+
+
+### [/planets/{{planetId}}] - Update one planet field(s)
+PATCH {{baseUrl}}/planets/{{planetId}}
+Content-Type: application/json
+
+{
+	"favoriteColor": "Crimson"
+}
+
+
+
+### [/planets/{{planetId}}] - Delete one planet
+DELETE {{baseUrl}}/planets/{{planetId}}
+
