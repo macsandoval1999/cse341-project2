@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('./routes');
 
-const mondodb = require("./data/connect.js");
+const mongodb = require("./data/connect.js");
 
 // * ENV Config and Create Express App
 dotenv.config();

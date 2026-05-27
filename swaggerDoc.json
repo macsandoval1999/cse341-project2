@@ -1,0 +1,355 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CSE341 Project 2 API: Planetary Data",
+    "description": "API that provides information about planets in our solar system, including their characteristics, distances from Earth and the Sun, and other interesting facts.",
+    "version": "1.0.0"
+  },
+  "host": "cse341-project2-0bia.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/planets/": {
+      "get": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Earth"
+                },
+                "planetType": {
+                  "type": "string",
+                  "example": "Terrestrial"
+                },
+                "diameterMiles": {
+                  "type": "number",
+                  "example": 7917
+                },
+                "radiusMiles": {
+                  "type": "number",
+                  "example": 3959
+                },
+                "yearInEarthDays": {
+                  "type": "number",
+                  "example": 365.25
+                },
+                "dayInEarthHours": {
+                  "type": "number",
+                  "example": 24
+                },
+                "closestDistanceFromEarthMiles": {
+                  "type": "number",
+                  "example": 0
+                },
+                "furthestDistanceFromEarthMiles": {
+                  "type": "number",
+                  "example": 0
+                },
+                "distanceFromSunMiles": {
+                  "type": "number",
+                  "example": 92960000
+                },
+                "numberOfMoons": {
+                  "type": "number",
+                  "example": 1
+                },
+                "gravityComparedToEarth": {
+                  "type": "number",
+                  "example": 1
+                },
+                "averageTemperatureF": {
+                  "type": "number",
+                  "example": 59
+                },
+                "atmosphere": {
+                  "type": "array",
+                  "example": [
+                    "Nitrogen",
+                    "Oxygen"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "hasRings": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "orbitalSpeedMph": {
+                  "type": "number",
+                  "example": 67000
+                },
+                "axialTiltDegrees": {
+                  "type": "number",
+                  "example": 23.5
+                },
+                "interestingFact": {
+                  "type": "string",
+                  "example": "Only planet known to support life"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/planets/{id}": {
+      "get": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Earth"
+                },
+                "planetType": {
+                  "type": "string",
+                  "example": "Terrestrial"
+                },
+                "diameterMiles": {
+                  "type": "number",
+                  "example": 7917
+                },
+                "radiusMiles": {
+                  "type": "number",
+                  "example": 3959
+                },
+                "yearInEarthDays": {
+                  "type": "number",
+                  "example": 365.25
+                },
+                "dayInEarthHours": {
+                  "type": "number",
+                  "example": 24
+                },
+                "closestDistanceFromEarthMiles": {
+                  "type": "number",
+                  "example": 0
+                },
+                "furthestDistanceFromEarthMiles": {
+                  "type": "number",
+                  "example": 0
+                },
+                "distanceFromSunMiles": {
+                  "type": "number",
+                  "example": 92960000
+                },
+                "numberOfMoons": {
+                  "type": "number",
+                  "example": 1
+                },
+                "gravityComparedToEarth": {
+                  "type": "number",
+                  "example": 1
+                },
+                "averageTemperatureF": {
+                  "type": "number",
+                  "example": 59
+                },
+                "atmosphere": {
+                  "type": "array",
+                  "example": [
+                    "Nitrogen",
+                    "Oxygen"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "hasRings": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "orbitalSpeedMph": {
+                  "type": "number",
+                  "example": 67000
+                },
+                "axialTiltDegrees": {
+                  "type": "number",
+                  "example": 23.5
+                },
+                "interestingFact": {
+                  "type": "string",
+                  "example": "Only planet known to support life"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Earth"
+                },
+                "planetType": {
+                  "type": "string",
+                  "example": "Terrestrial"
+                },
+                "diameterMiles": {
+                  "type": "number",
+                  "example": 7917
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Planets"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}
