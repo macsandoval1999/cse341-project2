@@ -1,6 +1,7 @@
 // * Imports
 const express = require('express');
 const planetsRoutes = require('./planetsRoutes.js');
+const solarSystemsRoutes = require('./solarSystemsRoutes.js');
 const swaggerRoutes = require('./swagger.js');
 
 // * Initialize Router Object
@@ -14,6 +15,8 @@ router.get('/', (req, res) => {
 });
 
 router.use('/planets', planetsRoutes);
+
+router.use('/solar-systems', solarSystemsRoutes);
 
 // * Export Router
 module.exports = router;

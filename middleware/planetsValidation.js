@@ -1,31 +1,14 @@
 // * Import
-const validator = require('../helpers/validationHelper')
+const validationHelper = require('../helpers/validationHelper')
 
-// * Define the objectId validation rule
-const objectIdRule = "regex:/^[0-9a-fA-F]{24}$/";
 
-// * Validation Middleware Functions
-const sendValidationError = (res, err) => {
-    res.status(412).send({
-        success: false,
-        message: "Validation failed",
-        errors: err,
-    });
+
+const verifyPlanetIdFormat = (req, res, next) => {
+    validationHelper.validateObjectId(req, res, next);
 };
 
-const runValidation = (body, rules, res, next) => {
-    validator(body, rules, {}, (err, status) => {
-        if (!status) {
-            sendValidationError(res, err);
-            return;
-        }
-
-        next();
-    });
-};
-
-// * Validation Functions for Planets
-const savePlanet = (req, res, next) => {
+// Define the validation rules for creating planets and replacing planets
+const verifyAllPlanetFields = (req, res, next) => {
     const validationRules = {
         name: "required|string",
         planetType: "required|string",
@@ -45,10 +28,11 @@ const savePlanet = (req, res, next) => {
         axialTiltDegrees: "required|numeric",
         interestingFact: "required|string"
     };
-    runValidation(req.body, validationRules, res, next);
+    validationHelper.runValidation(req.body, validationRules, res, next);
 };
 
-const updatePlanet = (req, res, next) => {
+// Define the validation rules for updating planets (all fields optional but must be valid if provided)
+const verifyUpdatedPlanetFields = (req, res, next) => {
     const validationRules = {
         name: "string",
         planetType: "string",
@@ -69,18 +53,21 @@ const updatePlanet = (req, res, next) => {
         interestingFact: "string"
     };
     if (Object.keys(req.body || {}).length === 0) {
-        res.status(412).send({
+        res.status(400).send({
             success: false,
             message: "Validation failed",
             errors: { body: ["Request body must include at least one field"] },
         });
         return;
     }
-    runValidation(req.body, validationRules, res, next);
+    validationHelper.runValidation(req.body, validationRules, res, next);
 };
+
+
 
 // * Export
 module.exports = {
-    savePlanet,
-    updatePlanet
+    verifyPlanetIdFormat,
+    verifyAllPlanetFields,
+    verifyUpdatedPlanetFields
 };

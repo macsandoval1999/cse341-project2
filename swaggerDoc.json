@@ -21,6 +21,16 @@
         }
       }
     },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/planets/": {
       "get": {
         "tags": [
@@ -128,8 +138,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -160,9 +170,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
@@ -269,9 +276,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
           }
         }
       },
@@ -316,12 +320,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "412": {
-            "description": "Precondition Failed"
           }
         }
       },
@@ -344,9 +342,428 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/solar-systems/": {
+      "get": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Alpha Centauri"
+                },
+                "primaryStarName": {
+                  "type": "string",
+                  "example": "Alpha Centauri A"
+                },
+                "starType": {
+                  "type": "string",
+                  "example": "G2V"
+                },
+                "planetarySystemStyle": {
+                  "type": "string",
+                  "example": "Binary"
+                },
+                "numberOfStars": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownDwarfPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 0
+                },
+                "distanceFromOurSunLightYears": {
+                  "type": "number",
+                  "example": 4.37
+                },
+                "estimatedAgeBillionYears": {
+                  "type": "number",
+                  "example": 5
+                },
+                "constellation": {
+                  "type": "string",
+                  "example": "Centaurus"
+                },
+                "starMassComparedToSun": {
+                  "type": "number",
+                  "example": 1.1
+                },
+                "starRadiusComparedToSun": {
+                  "type": "number",
+                  "example": 1.2
+                },
+                "starSurfaceTemperatureF": {
+                  "type": "number",
+                  "example": 5800
+                },
+                "hasPotentiallyHabitablePlanet": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "hasDebrisDisk": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "mostNotableFeatures": {
+                  "type": "array",
+                  "example": [
+                    "Closest star system to our Sun",
+                    "Binary star system"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownPlanets": {
+                  "type": "array",
+                  "example": [
+                    "Proxima Centauri b",
+                    "Alpha Centauri Bb"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownDwarfPlanets": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                },
+                "interestingFact": {
+                  "type": "string",
+                  "example": "Proxima Centauri b is the closest known exoplanet to Earth"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
-          "404": {
-            "description": "Not Found"
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/solar-systems/{id}": {
+      "get": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Alpha Centauri"
+                },
+                "primaryStarName": {
+                  "type": "string",
+                  "example": "Alpha Centauri A"
+                },
+                "starType": {
+                  "type": "string",
+                  "example": "G2V"
+                },
+                "planetarySystemStyle": {
+                  "type": "string",
+                  "example": "Binary"
+                },
+                "numberOfStars": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownDwarfPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 0
+                },
+                "distanceFromOurSunLightYears": {
+                  "type": "number",
+                  "example": 4.37
+                },
+                "estimatedAgeBillionYears": {
+                  "type": "number",
+                  "example": 5
+                },
+                "constellation": {
+                  "type": "string",
+                  "example": "Centaurus"
+                },
+                "starMassComparedToSun": {
+                  "type": "number",
+                  "example": 1.1
+                },
+                "starRadiusComparedToSun": {
+                  "type": "number",
+                  "example": 1.2
+                },
+                "starSurfaceTemperatureF": {
+                  "type": "number",
+                  "example": 5800
+                },
+                "hasPotentiallyHabitablePlanet": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "hasDebrisDisk": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "mostNotableFeatures": {
+                  "type": "array",
+                  "example": [
+                    "Closest star system to our Sun",
+                    "Binary star system"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownPlanets": {
+                  "type": "array",
+                  "example": [
+                    "Proxima Centauri b",
+                    "Alpha Centauri Bb"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownDwarfPlanets": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                },
+                "interestingFact": {
+                  "type": "string",
+                  "example": "Proxima Centauri b is the closest known exoplanet to Earth"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Alpha Centauri"
+                },
+                "primaryStarName": {
+                  "type": "string",
+                  "example": "Alpha Centauri A"
+                },
+                "starType": {
+                  "type": "string",
+                  "example": "G2V"
+                },
+                "planetarySystemStyle": {
+                  "type": "string",
+                  "example": "Binary"
+                },
+                "numberOfStars": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 2
+                },
+                "knownDwarfPlanetsOrbiting": {
+                  "type": "number",
+                  "example": 0
+                },
+                "distanceFromOurSunLightYears": {
+                  "type": "number",
+                  "example": 4.37
+                },
+                "estimatedAgeBillionYears": {
+                  "type": "number",
+                  "example": 5
+                },
+                "constellation": {
+                  "type": "string",
+                  "example": "Centaurus"
+                },
+                "starMassComparedToSun": {
+                  "type": "number",
+                  "example": 1.1
+                },
+                "starRadiusComparedToSun": {
+                  "type": "number",
+                  "example": 1.2
+                },
+                "starSurfaceTemperatureF": {
+                  "type": "number",
+                  "example": 5800
+                },
+                "hasPotentiallyHabitablePlanet": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "hasDebrisDisk": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "mostNotableFeatures": {
+                  "type": "array",
+                  "example": [
+                    "Closest star system to our Sun",
+                    "Binary star system"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownPlanets": {
+                  "type": "array",
+                  "example": [
+                    "Proxima Centauri b",
+                    "Alpha Centauri Bb"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "knownDwarfPlanets": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                },
+                "interestingFact": {
+                  "type": "string",
+                  "example": "Proxima Centauri b is the closest known exoplanet to Earth"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Solar Systems"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }

@@ -1,6 +1,6 @@
 // * Imports
-const mongodb = require("../data/connect.js");
-const ObjectId = require("mongodb").ObjectId;
+const mongodb = require('../data/connect.js');
+const ObjectId = require('mongodb').ObjectId;
 
 // * Helper functions
 // Build planet object from request body
@@ -21,11 +21,11 @@ const buildPlanetObject = (source) => ({
     hasRings: source.hasRings,
     orbitalSpeedMph: source.orbitalSpeedMph,
     axialTiltDegrees: source.axialTiltDegrees,
-    interestingFact: source.interestingFact,
+    interestingFact: source.interestingFact
 });
 
-// Send validation error response
-const sendValidationError = (res, err, message) => {
+// Send server error response
+const sendServerError = (res, err, message) => {
     console.error(message, err);
     res.status(500).json({ error: message });
 };
@@ -55,11 +55,6 @@ planetsController.getAllPlanets = async (req, res) => {
 // Get planet by ID
 planetsController.getPlanetById = async (req, res) => {
     //#swagger.tags = ['Planets']
-    if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json({ error: "Invalid planet ID format" });
-        return;
-    }
-
     try {
         const planetId = new ObjectId(req.params.id);
         const planet = await mongodb.database
@@ -69,7 +64,7 @@ planetsController.getPlanetById = async (req, res) => {
             .findOne({ _id: planetId });
 
         if (!planet) {
-            res.status(404).json({ error: "Planet not found" });
+            res.status(400).json({ error: "Planet not found" });
             return;
         }
 
@@ -115,7 +110,7 @@ planetsController.createPlanet = async (req, res) => {
             .insertOne(newPlanet);
 
         if (response.acknowledged) {
-            res.status(201).json({ message: "Planet created successfully" });
+            res.status(200).send({ message: "Planet created successfully" });
             return;
         }
 
@@ -151,11 +146,6 @@ planetsController.replacePlanet = async (req, res) => {
             interestingFact: 'Only planet known to support life'
         }
     } */
-    if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json({ error: "Invalid planet ID format" });
-        return;
-    }
-
     try {
         const newPlanetID = new ObjectId(req.params.id);
         const newPlanet = buildPlanetObject(req.body);
@@ -166,7 +156,7 @@ planetsController.replacePlanet = async (req, res) => {
             .replaceOne({ _id: newPlanetID }, newPlanet);
 
         if (response.matchedCount === 0) {
-            res.status(404).json({ error: "Planet not found" });
+            res.status(400).json({ error: "Planet not found" });
             return;
         }
 
@@ -188,11 +178,6 @@ planetsController.updatePlanet = async (req, res) => {
             diameterMiles: 7917
         }
     } */
-    if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json({ error: "Invalid planet ID format" });
-        return;
-    }
-
     try {
         const newPlanetID = new ObjectId(req.params.id);
         const updatedFields = req.body;
@@ -203,7 +188,7 @@ planetsController.updatePlanet = async (req, res) => {
             .updateOne({ _id: newPlanetID }, { $set: updatedFields });
 
         if (response.matchedCount === 0) {
-            res.status(404).json({ error: "Planet not found" });
+            res.status(400).json({ error: "Planet not found" });
             return;
         }
 
@@ -216,11 +201,6 @@ planetsController.updatePlanet = async (req, res) => {
 // Delete planet by ID
 planetsController.deletePlanet = async (req, res) => {
     //#swagger.tags = ['Planets']
-    if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json({ error: "Invalid planet ID format" });
-        return;
-    }
-
     try {
         const newPlanetID = new ObjectId(req.params.id);
         const response = await mongodb.database
@@ -230,7 +210,7 @@ planetsController.deletePlanet = async (req, res) => {
             .deleteOne({ _id: newPlanetID });
 
         if (response.deletedCount === 0) {
-            res.status(404).json({ error: "Planet not found" });
+            res.status(400).json({ error: "Planet not found" });
             return;
         }
 

@@ -1,0 +1,230 @@
+[
+    {
+        "name": "Solar System",
+        "primaryStarName": "Sun",
+        "starType": "G2V yellow dwarf",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 8,
+        "knownDwarfPlanetsOrbiting": 5,
+        "distanceFromOurSunLightYears": 0,
+        "estimatedAgeBillionYears": 4.6,
+        "constellation": "not applicable",
+        "starMassComparedToSun": 1,
+        "starRadiusComparedToSun": 1,
+        "starSurfaceTemperatureF": 9940,
+        "hasPotentiallyHabitablePlanet": true,
+        "hasDebrisDisk": true,
+        "mostNotableFeatures": [
+            "The only known planetary system to support life.",
+            "Contains the largest planet in the solar system, Jupiter.",
+            "Has a prominent asteroid belt between Mars and Jupiter."
+        ],
+        "knownPlanets": [
+            "Mercury",
+            "Venus",
+            "Earth",
+            "Mars",
+            "Jupiter",
+            "Saturn",
+            "Uranus",
+            "Neptune"
+        ],
+        "knownDwarfPlanets": ["Ceres", "Pluto", "Haumea", "Makemake", "Eris"],
+        "interestingFact": "The solar system formed from the gravitational collapse of a giant molecular cloud approximately 4.6 billion years ago."
+    },
+    {
+        "name": "Proxima Centauri System",
+        "primaryStarName": "Proxima Centauri",
+        "starType": "M5.5Ve red dwarf",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 2,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 4.24,
+        "estimatedAgeBillionYears": 4.85,
+        "constellation": "Centaurus",
+        "starMassComparedToSun": 0.12,
+        "starRadiusComparedToSun": 0.15,
+        "starSurfaceTemperatureF": 5010,
+        "hasPotentiallyHabitablePlanet": true,
+        "hasDebrisDisk": false,
+        "mostNotableFeatures": [
+            "The closest known star to the Sun.",
+            "Proxima Centauri b is located in the habitable zone of its star."
+        ],
+        "knownPlanets": ["Proxima Centauri b", "Proxima Centauri d"],
+        "knownDwarfPlanets": [],
+        "interestingFact": "Proxima Centauri b is located in the habitable zone of its star, making it a prime candidate for potential life."
+    },
+    {
+        "name": "TRAPPIST-1 System",
+        "primaryStarName": "TRAPPIST-1",
+        "starType": "M8 ultracool red dwarf",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 7,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 40.66,
+        "estimatedAgeBillionYears": 7.6,
+        "constellation": "Aquarius",
+        "starMassComparedToSun": 0.09,
+        "starRadiusComparedToSun": 0.12,
+        "starSurfaceTemperatureF": 4145,
+        "hasPotentiallyHabitablePlanet": true,
+        "hasDebrisDisk": false,
+        "mostNotableFeatures": [
+            "Hosts seven Earth-size planets, three of which are in the habitable zone.",
+            "The planets are very close to their star, with orbital periods ranging from 1.5 to 13 days."
+        ],
+        "knownPlanets": [
+            "TRAPPIST-1b",
+            "TRAPPIST-1c",
+            "TRAPPIST-1d",
+            "TRAPPIST-1e",
+            "TRAPPIST-1f",
+            "TRAPPIST-1g",
+            "TRAPPIST-1h"
+        ],
+        "knownDwarfPlanets": [],
+        "interestingFact": "TRAPPIST-1 hosts seven Earth-size planets, three of which are in the habitable zone, making it one of the most promising systems for finding potentially habitable exoplanets."
+    },
+    {
+        "name": "55 Cancri System",
+        "primaryStarName": "55 Cancri A",
+        "starType": "G8V yellow dwarf",
+        "planetarySystemStyle": "binary-star",
+        "numberOfStars": 2,
+        "knownPlanetsOrbiting": 6,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 41.05,
+        "estimatedAgeBillionYears": 10.2,
+        "constellation": "Cancer",
+        "starMassComparedToSun": 0.91,
+        "starRadiusComparedToSun": 0.94,
+        "starSurfaceTemperatureF": 9240,
+        "hasPotentiallyHabitablePlanet": false,
+        "hasDebrisDisk": false,
+        "mostNotableFeatures": [
+            "55 Cancri e is an ultra-hot super-Earth that circles its star in less than 18 hours."
+        ],
+        "knownPlanets": [
+            "55 Cancri Ab",
+            "55 Cancri Ac",
+            "55 Cancri Ae",
+            "55 Cancri Af",
+            "55 Cancri Bb",
+            "55 Cancri Bc"
+        ],
+        "knownDwarfPlanets": [],
+        "interestingFact": "55 Cancri e is an ultra-hot super-Earth that circles its star in less than 18 hours, making it one of the hottest known exoplanets."
+    },
+    {
+        "name": "HR 8799 System",
+        "primaryStarName": "HR 8799",
+        "starType": "A5V white main-sequence star",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 4,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 133.3,
+        "estimatedAgeBillionYears": 0.042,
+        "constellation": "Pegasus",
+        "starMassComparedToSun": 1.43,
+        "starRadiusComparedToSun": 1.44,
+        "starSurfaceTemperatureF": 12900,
+        "hasPotentiallyHabitablePlanet": false,
+        "hasDebrisDisk": true,
+        "mostNotableFeatures": [
+            "Its giant planets were among the first exoplanets ever directly imaged."
+        ],
+        "knownPlanets": ["HR 8799 b", "HR 8799 c", "HR 8799 d", "HR 8799 e"],
+        "knownDwarfPlanets": [],
+        "interestingFact": "HR 8799's giant planets were among the first exoplanets ever directly imaged, providing valuable insights into planetary atmospheres and formation."
+    },
+    {
+        "name": "Kepler-90 System",
+        "primaryStarName": "Kepler-90",
+        "starType": "G0V yellow-white dwarf",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 8,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 2790,
+        "estimatedAgeBillionYears": 5.8,
+        "constellation": "Draco",
+        "starMassComparedToSun": 1.13,
+        "starRadiusComparedToSun": 1.2,
+        "starSurfaceTemperatureF": 10480,
+        "hasPotentiallyHabitablePlanet": false,
+        "hasDebrisDisk": false,
+        "mostNotableFeatures": [
+            "It was the first known exoplanetary system discovered with eight confirmed planets, matching our solar system's count."
+        ],
+        "knownPlanets": [
+            "Kepler-90b",
+            "Kepler-90c",
+            "Kepler-90i",
+            "Kepler-90d",
+            "Kepler-90e",
+            "Kepler-90f",
+            "Kepler-90g",
+            "Kepler-90h"
+        ],
+        "knownDwarfPlanets": [],
+        "interestingFact": "Kepler-90 was the first known exoplanetary system discovered with eight confirmed planets, matching our solar system's count and demonstrating that our solar system is not unique in its number of planets."
+    },
+    {
+        "name": "Kepler-11 System",
+        "primaryStarName": "Kepler-11",
+        "starType": "G-type star",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 6,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 2110,
+        "estimatedAgeBillionYears": 3.2,
+        "constellation": "Cygnus",
+        "starMassComparedToSun": 1.042,
+        "starRadiusComparedToSun": 1.021,
+        "starSurfaceTemperatureF": 9760,
+        "hasPotentiallyHabitablePlanet": false,
+        "hasDebrisDisk": false,
+        "knownPlanets": [
+            "Kepler-11b",
+            "Kepler-11c",
+            "Kepler-11d",
+            "Kepler-11e",
+            "Kepler-11f",
+            "Kepler-11g"
+        ],
+        "knownDwarfPlanets": [],
+        "mostNotableFeatures": [
+            "Its six known planets orbit much closer to their star than Venus orbits the Sun."
+        ],
+        "interestingFact": "Kepler-11's six known planets orbit much closer to their star than Venus orbits the Sun, with all six planets completing an orbit in less than 120 days, making it one of the most compact planetary systems discovered."
+    },
+    {
+        "name": "Epsilon Eridani System",
+        "primaryStarName": "Epsilon Eridani",
+        "starType": "K2V orange dwarf",
+        "planetarySystemStyle": "single-star",
+        "numberOfStars": 1,
+        "knownPlanetsOrbiting": 1,
+        "knownDwarfPlanetsOrbiting": 0,
+        "distanceFromOurSunLightYears": 10.5,
+        "estimatedAgeBillionYears": 0.8,
+        "constellation": "Eridanus",
+        "starMassComparedToSun": 0.82,
+        "starRadiusComparedToSun": 0.74,
+        "starSurfaceTemperatureF": 8690,
+        "hasPotentiallyHabitablePlanet": false,
+        "hasDebrisDisk": true,
+        "knownPlanets": ["Epsilon Eridani b"],
+        "knownDwarfPlanets": [],
+        "mostNotableFeatures": [
+            "It is one of the nearest young Sun-like systems and is surrounded by a prominent debris disk."
+        ],
+        "interestingFact": "Epsilon Eridani is one of the nearest young Sun-like systems and is surrounded by a prominent debris disk, which may indicate ongoing planet formation or the presence of a large number of small bodies like asteroids and comets."
+    }
+]
