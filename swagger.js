@@ -4,8 +4,8 @@ const swaggerAutogen = require("swagger-autogen")();
 // * Define the documentation object (optional)
 const doc = {
     info: {
-        title: "CSE341 Project 2 API: Planetary Data",
-        description: "API that provides information about planets in our solar system, including their characteristics, distances from Earth and the Sun, and other interesting facts.",
+        title: "CSE341 Project 2 API: Interstellar Data",
+        description: "API that provides data for two interstellar topics: planets, and solar systems! Planets provide planetary information about our solar system, including their characteristics, distances from Earth and the Sun, and other interesting facts. Solar systems provide information about various solar systems in our galaxy, including their primary star, number of stars, known planets and dwarf planets orbiting, distance from our sun, and other interesting facts.",
     },
     host: "cse341-project2-0bia.onrender.com",
     schemes: ["https"],
