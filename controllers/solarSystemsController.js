@@ -80,6 +80,7 @@ solarSystemsController.getSolarSystemById = async (req, res) => {
 // Create new solar system
 solarSystemsController.createSolarSystem = async (req, res) => {
     //#swagger.tags = ['Solar Systems']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -127,6 +128,7 @@ solarSystemsController.createSolarSystem = async (req, res) => {
 // Replace solar system by ID
 solarSystemsController.replaceSolarSystem = async (req, res) => {
     //#swagger.tags = ['Solar Systems']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -175,6 +177,7 @@ solarSystemsController.replaceSolarSystem = async (req, res) => {
 // Update solar system by ID
 solarSystemsController.updateSolarSystem = async (req, res) => {
     //#swagger.tags = ['Solar Systems']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -223,6 +226,7 @@ solarSystemsController.updateSolarSystem = async (req, res) => {
 // Delete solar system by ID
 solarSystemsController.deleteSolarSystem = async (req, res) => {
     //#swagger.tags = ['Solar Systems']
+    //#swagger.security = [{ "sessionAuth": [] }]
     try {
         const newSolarSystemID = new ObjectId(req.params.id);
         const response = await mongodb.database

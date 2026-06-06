@@ -78,6 +78,7 @@ planetsController.getPlanetById = async (req, res) => {
 // Create new planet
 planetsController.createPlanet = async (req, res) => {
     //#swagger.tags = ['Planets']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -123,6 +124,7 @@ planetsController.createPlanet = async (req, res) => {
 // Replace planet by ID
 planetsController.replacePlanet = async (req, res) => {
     //#swagger.tags = ['Planets']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -169,6 +171,7 @@ planetsController.replacePlanet = async (req, res) => {
 // Update planet by ID
 planetsController.updatePlanet = async (req, res) => {
     //#swagger.tags = ['Planets']
+    //#swagger.security = [{ "sessionAuth": [] }]
     /* #swagger.parameters['body'] = {
         in: 'body',
         required: true,
@@ -201,6 +204,7 @@ planetsController.updatePlanet = async (req, res) => {
 // Delete planet by ID
 planetsController.deletePlanet = async (req, res) => {
     //#swagger.tags = ['Planets']
+    //#swagger.security = [{ "sessionAuth": [] }]
     try {
         const newPlanetID = new ObjectId(req.params.id);
         const response = await mongodb.database
